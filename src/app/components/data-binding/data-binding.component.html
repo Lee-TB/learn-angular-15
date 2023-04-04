@@ -1,0 +1,20 @@
+<!-- interpolation -->
+<h2>Interpolation</h2>
+<p>Name: {{ user.name }}</p>
+<p>Age: {{ user.age }}</p>
+
+<!-- property binding -->
+<h2>Property binding</h2>
+<input type="text" [value]="user.name" />
+
+<!-- event binding -->
+<h2>Event binding</h2>
+<button (click)="toggleName()" [style]="{ cursor: 'pointer' }">
+  Toggle name
+</button>
+<p *ngIf="showName">{{ user.name }}</p>
+
+<!-- Two-way binding -->
+<h2>Two-way binding</h2>
+<input type="text" [(ngModel)]="user.name" />
+<input type="text" [ngModel]="user.age" (ngModelChange)="user.age = $event" />
